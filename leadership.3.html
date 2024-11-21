@@ -53,6 +53,9 @@
     <script>
         let quotes = [];
         let currentIndex = 0;
+document.addEventListener("DOMContentLoaded", () => {
+    fetchQuotes();
+});
 
         async function fetchQuotes() {
             try {
