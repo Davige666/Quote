@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote of the Day</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        #quote-box {
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f9f9f9;
+            width: 80%;
+            max-width: 600px;
+        }
+        #quote {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        #author {
+            font-size: 1.2em;
+            color: #555;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            background: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quote of the Day</h1>
+    <div id="quote-box">
+        <div id="quote">Welcome to your Quote of the Day app!</div>
+        <div id="author"></div>
+    </div>
+    <button onclick="nextQuote()">Next Quote</button>
+
+    <script>
+        const quotes = [
+            { text: "The best way to predict the future is to create it.", author: "Peter Drucker" },
+            { text: "Life is 10% what happens to us and 90% how we react to it.", author: "Charles R. Swindoll" },
+            { text: "Do what you can, with what you have, where you are.", author: "Theodore Roosevelt" },
+            { text: "Success is not final, failure is not fatal: It is the courage to continue that counts.", author: "Winston Churchill" },
+            { text: "Keep your face always toward the sunshine—and shadows will fall behind you.", author: "Walt Whitman" },
+        ];
+
+        let currentIndex = 0;
+
+        function nextQuote() {
+            currentIndex = (currentIndex + 1) % quotes.length;
+            const currentQuote = quotes[currentIndex];
+            document.getElementById("quote").textContent = currentQuote.text;
+            document.getElementById("author").textContent = `— ${currentQuote.author}`;
+        }
+    </script>
+</body>
+</html>
