@@ -56,7 +56,7 @@
 
         async function fetchQuotes() {
             try {
-                const response = await fetch('https://docs.google.com/spreadsheets/d/18Ih4E-Fb_Kc6C7Gv57S369d-6J79-3-9muW976Sp_mg/edit?usp=sharing ');
+                const response = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vSCnsR7C7sC_GWcT3_oIW2EhrXrIWkVwMGLP4e2-MByxYkc40uZbyghwjCZQcv8FIDN97EpYeLaVirt/pub?output=csv');
                 const data = await response.text();
                 // Parse CSV
                 const rows = data.split("\n");
