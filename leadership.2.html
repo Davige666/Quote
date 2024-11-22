@@ -63,9 +63,8 @@
                 rows.forEach(row => {
                     const [text, author] = row.split(",");
                     if (text && author) {
-                        quotes.push({ text: text.trim(), author: author.trim() 
-                        document.addEventListener("DOMContentLoaded", () => {fetchQuotes();
-                     }
+                        quotes.push({ text: text.trim(), author: author.trim() });
+                    }
                 });
                 // Load the first quote
                 if (quotes.length > 0) {
@@ -92,7 +91,9 @@
         }
 
         // Fetch quotes on page load
-        fetchQuotes();
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchQuotes();
+        });
     </script>
 </body>
 </html>
