@@ -23,10 +23,6 @@
             font-size: 1.5em;
             margin-bottom: 10px;
         }
-        #author {
-            font-size: 1.2em;
-            color: #555;
-        }
         button {
             margin-top: 20px;
             padding: 10px 20px;
@@ -46,7 +42,7 @@
     <h1>Quote of the Day</h1>
     <div id="quote-box">
         <div id="quote">Loading...</div>
-        <div id="author"></div>
+       
     </div>
     <button onclick="nextQuote()">Next Quote</button>
 
@@ -61,9 +57,9 @@
                 // Parse CSV
                 const rows = data.split("\n");
                 rows.forEach(row => {
-                    const [text, author] = row.split(",");
-                    if (text && author) {
-                        quotes.push({ text: text.trim(), author: author.trim() });
+                    const [text] = row.split(",");
+                    if (text) {
+                        quotes.push({ text: text.trim() });
                     }
                 });
                 // Load the first quote
@@ -81,7 +77,6 @@
         function displayQuote(index) {
             const currentQuote = quotes[index];
             document.getElementById("quote").textContent = currentQuote.text;
-            document.getElementById("author").textContent = `— ${currentQuote.author}`;
         }
 
         function nextQuote() {
